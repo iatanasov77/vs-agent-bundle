@@ -1,0 +1,31 @@
+{
+    "name": "vankosoft/agent-bundle",
+    "type": "library",
+    "description": "Vankosoft Agent.",
+    "keywords": [
+        "vankosoft",
+        "agent"
+    ],
+    "homepage": "https://github.com/iatanasov77/vs-agent-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan I. Atanasov",
+            "email": "i.atanasov77@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/mailer": "^6.4"
+    },
+    "require-dev": {
+        
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vankosoft\\AgentBundle\\": "src/Vankosoft/AgentBundle/"
+        }
+    }
+}

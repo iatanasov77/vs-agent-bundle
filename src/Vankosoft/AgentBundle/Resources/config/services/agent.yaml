@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+        
+    vs_agent.agent:
+        class: Vankosoft\AgentBundle\Component\VankosoftAgent
+        arguments:
+            - '@parameter_bag'
+            - '@doctrine'
+            - '@translator'
+            - '@mailer'
+
+
