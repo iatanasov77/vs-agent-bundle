@@ -1,3 +1,9 @@
+1.0.2	|	Release date: **15.03.2025**
+============================================
+* New Features:
+  - Add Support for Older Symfony Mailer.
+
+
 1.0.1	|	Release date: **15.03.2025**
 ============================================
 * Bug-Fixes:
