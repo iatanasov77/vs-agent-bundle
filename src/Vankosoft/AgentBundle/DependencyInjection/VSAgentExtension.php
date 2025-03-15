@@ -15,7 +15,7 @@ class VSAgentExtension extends Extension
     /**
      * {@inheritDoc}
      */
-    public function load( array $config, ContainerBuilder $container )
+    public function load( array $config, ContainerBuilder $container ): void
     {
         $config = $this->processConfiguration( $this->getConfiguration([], $container), $config );
         
