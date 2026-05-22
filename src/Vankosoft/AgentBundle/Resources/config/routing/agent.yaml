@@ -1,0 +1,3 @@
+vs_agent_actions_index:
+    path: /vs-agent/actions
+    controller: Vankosoft\AgentBundle\Controller\ActionsController::index

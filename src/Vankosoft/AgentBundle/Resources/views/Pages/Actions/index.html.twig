@@ -1,0 +1,21 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{# Import Macros #}
+{% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_payment.template.pricing_plans_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_payment.template.pricing_plans_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block head_styles %}
+    {{ parent() }}
+    {{ encore_entry_link_tags( 'js/actions-index' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/actions-index' ) }}
+{% endblock %}
