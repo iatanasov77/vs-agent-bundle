@@ -27,5 +27,6 @@
         "psr-4": {
             "Vankosoft\\AgentBundle\\": "src/Vankosoft/AgentBundle/"
         }
-    }
+    },
+    "minimum-stability" : "dev"
 }
