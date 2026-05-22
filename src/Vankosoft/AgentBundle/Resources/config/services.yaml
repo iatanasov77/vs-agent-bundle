@@ -1,6 +1,7 @@
 imports:
     - { resource: services/agent.yaml }
     - { resource: services/controller.yaml }
+    - { resource: services/menu.yaml }
     
 services:
     _defaults:
