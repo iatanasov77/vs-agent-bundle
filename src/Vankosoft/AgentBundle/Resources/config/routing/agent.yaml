@@ -1,3 +1,7 @@
 vs_agent_actions_index:
-    path: /vs-agent/actions
+    path: /vs-agent/actions/list
     controller: Vankosoft\AgentBundle\Controller\ActionsController::index
+
+vs_agent_actions_broke_virtual_host:
+    path: /vs-agent/actions/broke-virtual-host
+    controller: Vankosoft\AgentBundle\Controller\ActionsController::brokeVirtualHost
