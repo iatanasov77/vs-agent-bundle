@@ -12,8 +12,8 @@ class VirtualHostForm extends AbstractType
     {
         $builder
             ->add( 'virtualHost', TextType::class, [
-                'label'                 => 'vs_issue_tracking.form.project_issue.title',
-                'translation_domain'    => 'VSIssueTrackingBundle',
+                'label'                 => 'vs_agent.form.virtual_host.virtual_host',
+                'translation_domain'    => 'VSAgentBundle',
                 'required'              => true
             ])
         ;
@@ -30,6 +30,6 @@ class VirtualHostForm extends AbstractType
     
     public function getName()
     {
-        return 'vs_issue_tracking_project_kanbanboard_subtask';
+        return 'vs_agent_virtual_host';
     }
 }

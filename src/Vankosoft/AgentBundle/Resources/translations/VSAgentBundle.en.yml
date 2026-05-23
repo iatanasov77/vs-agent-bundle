@@ -1,4 +1,8 @@
 vs_agent:
+    form:
+        virtual_host:
+            virtual_host: Virtual Host
+    
     template:
         agent_actions_index_title: Agent Actions
         broke_virtual_host_config: Broke Virtual Host Config
