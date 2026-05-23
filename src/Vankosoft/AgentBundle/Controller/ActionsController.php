@@ -19,12 +19,6 @@ class ActionsController extends AbstractController
         ]);
     }
     
-    public function showVirtualHostForm( Request $request ): Response
-    {
-        broke_virtual_host.html.twig
-        virtual_host_form.html.twig
-    }
-    
     public function showBrokenVirtualHost( Request $request ): Response
     {
         $filecontents = \file_get_contents( "/etc/httpd/conf.d/25-myprojects.lh.conf" );
