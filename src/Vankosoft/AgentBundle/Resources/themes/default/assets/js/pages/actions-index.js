@@ -15,15 +15,24 @@ $( function()
 
     $( '#btnShowBrokenVirtualHost' ).on( 'click', function( e )
     {
+        let formData    = new FormData();
+        formData.set( "virtualHost", $( '#virtual_host_form_virtualHost' ).val() );
+        alert( $( '#virtual_host_form_virtualHost' ).val() ); return;
+        
         VsSpinnerShow();
         $.ajax({
             type: 'GET',
             url: VsPath( 'vs_agent_actions_show_broken_virtual_host' ),
+            data: formData,
+            processData: false,
+            contentType: false,
+            type: 'POST',
             success: function ( response ) {
                 VsSpinnerHide();
                 
                 if ( response.status == 'ok' ) {
                     alert( response.data.filecontents );
+                    document.location = document.location;
                 } else {
                     alert( 'RESPONSE ERROR!!!' );
                 }
@@ -38,15 +47,24 @@ $( function()
     
 	$( '#btnBrokeVirtualHost' ).on( 'click', function ( e )
     {
+        let formData    = new FormData();
+        formData.set( "virtualHost", $( '#virtual_host_form_virtualHost' ).val() );
+        alert( $( '#virtual_host_form_virtualHost' ).val() ); return;
+        
         VsSpinnerShow();
         $.ajax({
             type: 'GET',
             url: VsPath( 'vs_agent_actions_broke_virtual_host' ),
+            data: formData,
+            processData: false,
+            contentType: false,
+            type: 'POST',
             success: function ( response ) {
                 VsSpinnerHide();
                 
                 if ( response.status == 'ok' ) {
                     alert( response.data.filecontents );
+                    document.location = document.location;
                 } else {
                     alert( 'RESPONSE ERROR!!!' );
                 }
