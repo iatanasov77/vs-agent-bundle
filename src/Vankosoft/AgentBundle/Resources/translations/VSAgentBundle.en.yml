@@ -2,6 +2,8 @@ vs_agent:
     form:
         virtual_host:
             virtual_host: Virtual Host
+            show_broken: Show Broken
+            broke: Broke
     
     template:
         agent_actions_index_title: Agent Actions

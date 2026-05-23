@@ -9,6 +9,21 @@
             {{ form_widget(virtualhostForm.virtualHost, {'attr': {'class': 'form-control'}}) }}
         </div>
         <!--end col-->
+        
+        <div class="mt-4">
+            <div class="hstack gap-2 justify-content-end">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+                    {{ 'vs_application.form.close' | trans( {},'VSApplicationBundle' ) }}
+                </button>
+                <button type="button" class="btn btn-success" id="btnShowBrokenVirtualHost">
+                    {{ 'vs_agent.form.virtual_host.show_broken' | trans( {},'VSAgentBundle' ) }}
+                </button>
+                <button type="button" class="btn btn-success" id="btnBrokeVirtualHost">
+                    {{ 'vs_agent.form.virtual_host.broke' | trans( {},'VSAgentBundle' ) }}
+                </button>
+            </div>
+        </div>
+        <!--end col-->
     </div>
     <!--end row-->
 {{ form_end(virtualhostForm, {'render_rest': false}) }}
