@@ -2,6 +2,7 @@ vs_agent:
     form:
         virtual_host:
             virtual_host: Virtual Host
+            virtual_host_help: '/etc/httpd/conf.d/25-myprojects.lh.conf'
             show_broken: Show Broken
             broke: Broke
     

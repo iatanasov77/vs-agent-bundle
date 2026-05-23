@@ -17,7 +17,6 @@ $( function()
     {
         let formData    = new FormData();
         formData.set( "virtualHost", $( '#virtual_host_form_virtualHost' ).val() );
-        alert( $( '#virtual_host_form_virtualHost' ).val() ); return;
         
         VsSpinnerShow();
         $.ajax({
@@ -49,7 +48,6 @@ $( function()
     {
         let formData    = new FormData();
         formData.set( "virtualHost", $( '#virtual_host_form_virtualHost' ).val() );
-        alert( $( '#virtual_host_form_virtualHost' ).val() ); return;
         
         VsSpinnerShow();
         $.ajax({

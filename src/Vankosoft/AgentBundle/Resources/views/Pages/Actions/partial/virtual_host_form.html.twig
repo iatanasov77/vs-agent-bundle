@@ -7,6 +7,10 @@
             }}
             
             {{ form_widget(virtualhostForm.virtualHost, {'attr': {'class': 'form-control'}}) }}
+            
+            <div class="form-text">
+                {{ 'vs_agent.form.virtual_host.virtual_host_help' | trans( {},'VSAgentBundle' ) }}
+            </div>
         </div>
         <!--end col-->
         

@@ -21,27 +21,45 @@ class ActionsController extends AbstractController
     
     public function showBrokenVirtualHost( Request $request ): Response
     {
-        $filecontents = \file_get_contents( "/etc/httpd/conf.d/25-myprojects.lh.conf" );
-        $contents = \str_replace( '/public/shared_assets/build', '', $filecontents );
+        if ( $request->isMethod( 'POST' ) ) {
+            $virtualHost = $request->request->get( 'virtualHost' );
+            
+            $filecontents = \file_get_contents( $virtualHost );
+            $contents = \str_replace( '/public/shared_assets/build', '', $filecontents );
+            
+            return new JsonResponse([
+                'status'    => Status::STATUS_OK,
+                'data'      => [
+                    'filecontents' => $contents,
+                ]
+            ]);
+        }
         
         return new JsonResponse([
-            'status'    => Status::STATUS_OK,
-            'data'      => [
-                'filecontents' => $contents,
-            ]
+            'status'    => Status::STATUS_ERROR,
+            'message'   => 'Controller Error !!!'
         ]);
     }
     
     public function brokeVirtualHost( Request $request ): Response
     {
-        $filecontents = \file_get_contents( "/etc/httpd/conf.d/25-myprojects.lh.conf" );
-        $contents = \str_replace( '/public/shared_assets/build', '', $filecontents );
+        if ( $request->isMethod( 'POST' ) ) {
+            $virtualHost = $request->request->get( 'virtualHost' );
+            
+            $filecontents = \file_get_contents( $virtualHost );
+            $contents = \str_replace( '/public/shared_assets/build', '', $filecontents );
+            
+            return new JsonResponse([
+                'status'    => Status::STATUS_OK,
+                'data'      => [
+                    'filecontents' => $contents,
+                ]
+            ]);
+        }
         
         return new JsonResponse([
-            'status'    => Status::STATUS_OK,
-            'data'      => [
-                'filecontents' => $contents,
-            ]
+            'status'    => Status::STATUS_ERROR,
+            'message'   => 'Controller Error !!!'
         ]);
     }
 }
