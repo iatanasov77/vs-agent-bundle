@@ -4,6 +4,39 @@ import { VsSpinnerShow, VsSpinnerHide } from '@@/js/includes/vs_spinner.js';
 
 $( function()
 {
+    $( '#btnShowVirtualHostForm' ).on( 'click', function( e )
+    {
+        /** Bootstrap 5 Modal Toggle */
+        const myModal = new bootstrap.Modal( '#brokeVirtualHostModal', {
+            keyboard: false
+        });
+        myModal.show( $( '#brokeVirtualHostModal' ).get( 0 ) );
+    });
+
+    $( '#btnShowBrokenVirtualHost' ).on( 'click', function( e )
+    {
+        var taskId = $( this ).attr( 'data-taskId' );
+        
+        $.ajax({
+            type: "GET",
+            url: VsPath( 'vs_issue_tracking_project_issues_kanbanboard_task_assign_member_form', {'taskId': taskId } ),
+            success: function( response )
+            {
+                $( '#AssignMemberModalBody' ).html( response );
+                
+                /** Bootstrap 5 Modal Toggle */
+                const myModal = new bootstrap.Modal( '#inviteMembersModal', {
+                    keyboard: false
+                });
+                myModal.show( $( '#inviteMembersModal' ).get( 0 ) );
+            },
+            error: function()
+            {
+                alert( "SYSTEM ERROR!!!" );
+            }
+        });
+    });
+    
 	$( '#btnBrokeVirtualHost' ).on( 'click', function ( e )
     {
         VsSpinnerShow();

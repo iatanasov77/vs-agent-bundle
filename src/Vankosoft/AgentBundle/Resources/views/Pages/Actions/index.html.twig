@@ -10,6 +10,12 @@
 
 {% endblock content %}
 
+{% block modals %}
+    {{ parent() }}
+    
+    {% include '@VSAgent/Pages/Actions/modal/broke_virtual_host.html.twig' %}
+{% endblock %}
+
 {% block head_styles %}
     {{ parent() }}
     {{ encore_entry_link_tags( 'js/actions-index' ) }}
