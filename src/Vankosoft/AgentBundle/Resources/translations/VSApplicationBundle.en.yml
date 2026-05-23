@@ -1,0 +1,4 @@
+vs_application:
+    menu:
+        agent_menu_title: VankoSoft Agent
+        list_agent_actions: Agent Actions

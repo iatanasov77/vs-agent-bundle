@@ -1,3 +1,11 @@
+1.1.0	|	Release date: **23.05.2026**
+============================================
+* New Features:
+  - Create an Actions Controller and Views.
+  - Create Broke Virtual Host Action.
+  - Create a Form to Send Path to Virtual Host.
+
+
 1.0.2	|	Release date: **15.03.2025**
 ============================================
 * New Features:

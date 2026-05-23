@@ -1,0 +1,13 @@
+vs_agent:
+    form:
+        virtual_host:
+            virtual_host: Virtual Host
+            virtual_host_help: '/etc/httpd/conf.d/25-myprojects.lh.conf'
+            apache_service: Apache Service
+            show_broken: Show Broken
+            broke: Broke
+    
+    template:
+        agent_actions_index_title: Agent Actions
+        broke_virtual_host_config: Broke Virtual Host Config
+        broke: Broke

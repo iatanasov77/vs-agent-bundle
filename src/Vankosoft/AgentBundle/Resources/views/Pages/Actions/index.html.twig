@@ -1,0 +1,27 @@
+{% extends "@VSApplication/layout.html.twig" %}
+
+{# Import Macros #}
+{% import "@VSApplication/Macros/alerts.html.twig" as alerts %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_agent.template.agent_actions_index_title' | trans( {},'VSAgentBundle' ) }}{% endblock %}
+{% block pageTitle %}<i class="fa fa-user-secret"></i> {{ 'vs_agent.template.agent_actions_index_title' | trans( {},'VSAgentBundle' ) }}{% endblock %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block modals %}
+    {{ parent() }}
+    
+    {% include '@VSAgent/Pages/Actions/modal/broke_virtual_host.html.twig' %}
+{% endblock %}
+
+{% block head_styles %}
+    {{ parent() }}
+    {{ encore_entry_link_tags( 'js/actions-index' ) }}
+{% endblock %}
+
+{% block body_scripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/actions-index' ) }}
+{% endblock %}

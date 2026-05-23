@@ -1,9 +1,11 @@
 imports:
     - { resource: services/agent.yaml }
+    - { resource: services/form.yaml }
+    - { resource: services/controller.yaml }
+    - { resource: services/menu.yaml }
     
 services:
     _defaults:
         autowire: true
         autoconfigure: true
         public: true
-

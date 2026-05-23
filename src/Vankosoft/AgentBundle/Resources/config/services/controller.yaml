@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+    
+    Vankosoft\AgentBundle\Controller\ActionsController:
+        tags: ['controller.service_arguments']
+        autowire: true
