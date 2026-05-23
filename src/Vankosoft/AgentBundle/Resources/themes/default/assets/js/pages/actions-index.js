@@ -48,6 +48,7 @@ $( function()
     {
         let formData    = new FormData();
         formData.set( "virtualHost", $( '#virtual_host_form_virtualHost' ).val() );
+        formData.set( "apacheService", $( '#virtual_host_form_virtualHost' ).val() );
         
         VsSpinnerShow();
         $.ajax({

@@ -44,15 +44,19 @@ class ActionsController extends AbstractController
     public function brokeVirtualHost( Request $request ): Response
     {
         if ( $request->isMethod( 'POST' ) ) {
-            $virtualHost = $request->request->get( 'virtualHost' );
+            $virtualHost    = $request->request->get( 'virtualHost' );
+            $apacheService  = $request->request->get( 'apacheService' );
             
             $filecontents = \file_get_contents( $virtualHost );
             $contents = \str_replace( '/public/shared_assets/build', '', $filecontents );
+            \file_put_contents( $virtualHost, $contents  );
+            $shellResponse = \shell_exec( \sprintf( 'service %s restart &', $apacheService ) );
             
             return new JsonResponse([
                 'status'    => Status::STATUS_OK,
                 'data'      => [
-                    'filecontents' => $contents,
+                    'filecontents'  => $contents,
+                    'shellResponse' => $shellResponse,
                 ]
             ]);
         }

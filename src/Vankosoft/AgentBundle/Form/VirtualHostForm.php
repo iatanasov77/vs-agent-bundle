@@ -16,6 +16,12 @@ class VirtualHostForm extends AbstractType
                 'translation_domain'    => 'VSAgentBundle',
                 'required'              => true
             ])
+            
+            ->add( 'apacheService', TextType::class, [
+                'label'                 => 'vs_agent.form.virtual_host.apache_service',
+                'translation_domain'    => 'VSAgentBundle',
+                'required'              => true
+            ])
         ;
     }
     
