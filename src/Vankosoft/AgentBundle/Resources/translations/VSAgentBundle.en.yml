@@ -7,7 +7,7 @@ vs_agent:
             show_broken: Show Broken
             broke: Broke
         
-        vankosoft_applicatiom:
+        vankosoft_application:
             vankosoft_application: Vankosoft Application
             vankosoft_application_placeholder: ' -- Select Vankosoft Application --'
     
