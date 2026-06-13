@@ -4,12 +4,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 use Vankosoft\ApplicationBundle\Component\Status;
 use Vankosoft\AgentBundle\Form\VirtualHostForm;
 
 class ActionsController extends AbstractController
 {
+    /** @var RepositoryInterface */
+    private $applicationsRepository;
+    
+    public function __construct(
+        RepositoryInterface $applicationsRepository
+    ) {
+        $this->applicationsRepository = $applicationsRepository;
+    }
+    
     public function index( Request $request ): Response
     {
         $virtualhostForm   = $this->createForm( VirtualHostForm::class );

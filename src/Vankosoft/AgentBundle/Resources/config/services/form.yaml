@@ -7,3 +7,9 @@ services:
     Vankosoft\AgentBundle\Form\VirtualHostForm:
         tags:
             - { name: form.type }
+    
+    Vankosoft\AgentBundle\Form\VankosoftApplicationForm:
+        tags:
+            - { name: form.type }
+        arguments:
+            - '%vs_application.model.application.class%'

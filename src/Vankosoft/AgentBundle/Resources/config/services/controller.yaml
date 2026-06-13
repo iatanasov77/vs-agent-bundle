@@ -6,3 +6,5 @@ services:
     Vankosoft\AgentBundle\Controller\ActionsController:
         tags: ['controller.service_arguments']
         autowire: true
+        arguments:
+            - '@vs_application.repository.application'
