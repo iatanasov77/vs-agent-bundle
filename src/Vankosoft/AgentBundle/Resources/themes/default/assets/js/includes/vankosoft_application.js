@@ -2,8 +2,8 @@
 $( '#btnShowVirtualHostForm' ).on( 'click', function( e )
 {
     /** Bootstrap 5 Modal Toggle */
-    const myModal = new bootstrap.Modal( '#btnShowVankosoftApplicationForm', {
+    const myModal = new bootstrap.Modal( '#deleteVankosoftApplicationModal', {
         keyboard: false
     });
-    myModal.show( $( '#btnShowVankosoftApplicationForm' ).get( 0 ) );
+    myModal.show( $( '#deleteVankosoftApplicationModal' ).get( 0 ) );
 });

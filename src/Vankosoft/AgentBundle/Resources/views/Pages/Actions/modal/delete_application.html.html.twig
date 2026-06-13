@@ -1,0 +1,16 @@
+<div class="modal fade" id="deleteVankosoftApplicationModal" tabindex="-1" aria-labelledby="deleteVankosoftApplicationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0">
+            <div class="modal-header p-3 bg-info-subtle">
+                <h5 class="modal-title" id="deleteVankosoftApplicationLabel">
+                    {{ 'vs_agent.form.virtual_host.virtual_host' | trans( {},'VSAgentBundle' ) }}
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalBrokeVirtualHost">
+                {% include '@VSAgent/Pages/Actions/partial/vanosoft_application_form.html.twig' %}
+            </div>
+        </div>
+    </div>
+</div>
+<!--end add board modal-->
