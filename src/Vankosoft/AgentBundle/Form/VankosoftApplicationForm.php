@@ -21,8 +21,8 @@ class VankosoftApplicationForm extends AbstractType
     {
         $builder
             ->add( 'application', EntityType::class, [
-                'label'                 => 'vs_agent.form.vankosoft_application.form.vankosoft_application',
-                'placeholder'           => 'vs_agent.form.form.vankosoft_application.vankosoft_application_placeholder',
+                'label'                 => 'vs_agent.form.vankosoft_application.vankosoft_application',
+                'placeholder'           => 'vs_agent.form.vankosoft_application.vankosoft_application_placeholder',
                 'translation_domain'    => 'VSAgentBundle',
                 
                 'class'                 => $this->applicationClass,
