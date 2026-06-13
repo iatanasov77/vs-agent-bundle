@@ -24,7 +24,7 @@ class ActionsController extends AbstractController
     public function index( Request $request ): Response
     {
         $virtualhostForm            = $this->createForm( VirtualHostForm::class );
-        $vankosoftApplicationForm   = $this->createForm( VankosoftApplicationForm:class );
+        $vankosoftApplicationForm   = $this->createForm( VankosoftApplicationForm::class );
         
         return $this->render( '@VSAgent/Pages/Actions/index.html.twig', [
             'virtualhostForm'           => $virtualhostForm,
