@@ -6,8 +6,17 @@ vs_agent:
             apache_service: Apache Service
             show_broken: Show Broken
             broke: Broke
-    
+        
+        vankosoft_application:
+            vankosoft_application: Vankosoft Application
+            vankosoft_application_placeholder: ' -- Select Vankosoft Application --'
+            delete: Delete
+            
     template:
         agent_actions_index_title: Agent Actions
+        
         broke_virtual_host_config: Broke Virtual Host Config
         broke: Broke
+        
+        delete_vankosoft_application: Delete Vankosoft Application
+        delete: Delete

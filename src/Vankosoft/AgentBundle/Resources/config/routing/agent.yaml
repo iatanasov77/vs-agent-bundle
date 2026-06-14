@@ -9,3 +9,7 @@ vs_agent_actions_show_broken_virtual_host:
 vs_agent_actions_broke_virtual_host:
     path: /vs-agent/actions/broke-virtual-host
     controller: Vankosoft\AgentBundle\Controller\ActionsController::brokeVirtualHost
+
+vs_agent_actions_delete_application:
+    path: /vs-agent/actions/delete-application
+    controller: Vankosoft\AgentBundle\Controller\ActionsController::deleteApplication

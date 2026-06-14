@@ -7,13 +7,41 @@
 {% block pageTitle %}<i class="fa fa-user-secret"></i> {{ 'vs_agent.template.agent_actions_index_title' | trans( {},'VSAgentBundle' ) }}{% endblock %}
 
 {% block content %}
-
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header align-items-center d-flex">
+                    <h4 class="card-title mb-0 flex-grow-1">
+                        {{ 'vs_agent.template.agent_actions_index_title' | trans( {},'VSAgentBundle' ) }}
+                    </h4>
+                </div><!-- end card header -->
+                <div class="card-body">
+                    <p class="text-muted">
+                        {{ 'vs_agent.template.broke_virtual_host_config' | trans( {},'VSAgentBundle' ) }}
+                        
+                        <button type="button" class="btn btn-primary waves-effect waves-light ms-4" id="btnShowVirtualHostForm">
+                            {{ 'vs_agent.template.broke' | trans( {},'VSAgentBundle' ) }}
+                        </button>
+                    </p>
+                    
+                    <p class="text-muted">
+                        {{ 'vs_agent.template.delete_vankosoft_application' | trans( {},'VSAgentBundle' ) }}
+                        
+                        <button type="button" class="btn btn-primary waves-effect waves-light ms-4" id="btnShowVankosoftApplicationForm">
+                            {{ 'vs_agent.template.delete' | trans( {},'VSAgentBundle' ) }}
+                        </button>
+                    </p>
+                </div><!-- end card-body -->
+            </div><!-- end card -->
+        </div>
+    </div>
 {% endblock content %}
 
 {% block modals %}
     {{ parent() }}
     
     {% include '@VSAgent/Pages/Actions/modal/broke_virtual_host.html.twig' %}
+    {% include '@VSAgent/Pages/Actions/modal/delete_application.html.html.twig' %}
 {% endblock %}
 
 {% block head_styles %}
