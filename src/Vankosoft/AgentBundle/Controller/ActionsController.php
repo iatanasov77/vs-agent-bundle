@@ -94,8 +94,8 @@ class ActionsController extends AbstractController
             $appId = $request->request->get( 'application' );
             $app = $this->applicationsRepository->find( $appId );
             
-//             $em->remove( $app );
-//             $em->flush();
+            $em->remove( $app );
+            $em->flush();
             
             return new JsonResponse([
                 'status'    => Status::STATUS_OK,
