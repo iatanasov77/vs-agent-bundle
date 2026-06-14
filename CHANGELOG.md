@@ -1,3 +1,9 @@
+1.1.1	|	Release date: **14.06.2026**
+============================================
+* New Features:
+  - Add Delete Application Action.
+
+
 1.1.0	|	Release date: **23.05.2026**
 ============================================
 * New Features:
