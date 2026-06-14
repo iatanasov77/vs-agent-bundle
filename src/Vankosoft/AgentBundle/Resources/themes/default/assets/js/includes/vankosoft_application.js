@@ -29,7 +29,7 @@ $( '#btnDeleteApplication' ).on( 'click', function ( e )
             VsSpinnerHide();
             
             if ( response.status == 'ok' ) {
-                alert( response.data.filecontents );
+                alert( 'Ready to Delete Application.' );
                 document.location = document.location;
             } else {
                 alert( 'RESPONSE ERROR!!!' );

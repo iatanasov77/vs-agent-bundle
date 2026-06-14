@@ -7,4 +7,5 @@ services:
         tags: ['controller.service_arguments']
         autowire: true
         arguments:
+            - '@doctrine'
             - '@vs_application.repository.application'
