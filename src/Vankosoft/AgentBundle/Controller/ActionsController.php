@@ -76,7 +76,24 @@ class ActionsController extends AbstractController
         
         return new JsonResponse([
             'status'    => Status::STATUS_ERROR,
-            'message'   => 'Controller Error !!!'
+            'message'   => 'Broke Virtual Host Error !!!'
+        ]);
+    }
+    
+    public function deleteApplication( Request $request ): Response
+    {
+        if ( $request->isMethod( 'POST' ) ) {
+            $appId = $request->request->get( 'application' );
+            $app = $this->applicationsRepository->find( $appId );
+            
+            return new JsonResponse([
+                'status'    => Status::STATUS_OK,
+            ]);
+        }
+        
+        return new JsonResponse([
+            'status'    => Status::STATUS_ERROR,
+            'message'   => 'Delete Application Error !!!'
         ]);
     }
 }
