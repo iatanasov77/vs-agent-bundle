@@ -10,7 +10,8 @@ vs_agent:
         vankosoft_application:
             vankosoft_application: Vankosoft Application
             vankosoft_application_placeholder: ' -- Select Vankosoft Application --'
-    
+            delete: Delete
+            
     template:
         agent_actions_index_title: Agent Actions
         
