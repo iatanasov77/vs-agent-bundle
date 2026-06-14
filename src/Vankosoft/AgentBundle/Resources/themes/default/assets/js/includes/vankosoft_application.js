@@ -14,8 +14,7 @@ $( '#btnShowVankosoftApplicationsForm' ).on( 'click', function( e )
 $( '#btnDeleteApplication' ).on( 'click', function ( e )
 {
     let formData    = new FormData();
-    formData.set( "virtualHost", $( '#virtual_host_form_virtualHost' ).val() );
-    formData.set( "apacheService", $( '#virtual_host_form_virtualHost' ).val() );
+    formData.set( "application", $( '#vankosoft_application_form_application' ).val() );
     
     VsSpinnerShow();
     $.ajax({
