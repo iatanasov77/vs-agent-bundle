@@ -1,3 +1,9 @@
+1.1.2	|	Release date: **28.06.2026**
+============================================
+* Bug-Fixes:
+  - Fix Detecting this Bundle as a Malware.
+
+
 1.1.1	|	Release date: **14.06.2026**
 ============================================
 * New Features:

