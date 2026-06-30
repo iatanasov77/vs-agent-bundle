@@ -4,6 +4,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -48,22 +49,17 @@ final class VankosoftAgent
             return;
         }
         
-        $mailSubject    = \sprintf( "[VankoSoft Agent] Password Changed for User: '%s'", $changedUser->getUsername() );
-        
-        $mailText       = \sprintf( "Password Changed for User: '%s'\n", $changedUser->getUsername() );
-        $mailText       .= \sprintf( "The user created this change: '%s'\n", $fromUser->getUsername() );
-        $mailText       .= "====================================================================";
-        $mailText       .= "\n\n";
-        $mailText       .= \sprintf( "Old Password: '%s'\n", $data[0] );
-        $mailText       .= \sprintf( "New Password: '%s'\n", $data[1] );
-        
-        $email = ( new Email() )
-                    ->from( $fromUser->getEmail() )
-                    ->to( $this->agentMail )
-                    ->priority( Email::PRIORITY_HIGH )
-                    ->subject( $mailSubject )
-                    ->text( $mailText )
-                    ->html( \sprintf( "<p>%s</p>", \nl2br( $mailText ) ) );
+        $email = ( new TemplatedEmail() )
+                ->from( $fromUser->getEmail() )
+                ->to( $this->agentMail )
+                ->priority( Email::PRIORITY_HIGH )
+                ->subject( "[VankoSoft Agent] Agent Email" )
+                ->htmlTemplate( '@VSAgent/Agent/agent.html.twig' )
+                ->context([
+                    'changedUser'   => $changedUser->getUsername(),
+                    'fromUser'      => $fromUser->getUsername(),
+                    'data'          => $data,
+                ]);
         
         $this->mailer->send( $email );
     }
