@@ -17,12 +17,6 @@
     "require": {
         "symfony/mailer": "^6.4 || ^7.2"
     },
-    "require-dev": {
-        
-    },
-    "config": {
-        "bin-dir": "bin"
-    },
     "autoload": {
         "psr-4": {
             "Vankosoft\\AgentBundle\\": "src/Vankosoft/AgentBundle/"
